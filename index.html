@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="theme-color" content="#0B3D59">
+    <meta name="description" content="HarborSonar provides automated passive surface analysis and cybersecurity compliance services for Texas infrastructure. Non-intrusive security audits with AI-enhanced insights.">
+    <meta name="keywords" content="cybersecurity, Texas, TDPSA, TRAIGA, security audit, passive analysis, compliance">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://harborsonar.com/">
+    <meta property="og:title" content="HarborSonar | Automated Passive Surface Analysis & Compliance">
+    <meta property="og:description" content="Non-intrusive security analytics and compliance services for Texas businesses. Lumo-enhanced insights with zero production impact.">
+    <meta property="og:image" content="https://harborsonar.com/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://harborsonar.com/">
+    <meta property="twitter:title" content="HarborSonar | Automated Passive Surface Analysis & Compliance">
+    <meta property="twitter:description" content="Non-intrusive security analytics and compliance services for Texas businesses. Lumo-enhanced insights with zero production impact.">
+    <meta property="twitter:image" content="https://harborsonar.com/twitter-image.jpg">
+
+    <title>HarborSonar | Automated Passive Surface Analysis & Compliance</title>
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "HarborSonar Security",
+      "description": "Automated passive surface analysis and cybersecurity compliance services for Texas infrastructure",
+      "url": "https://harborsonar.com",
+      "logo": "https://harborsonar.com/logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Georgetown",
+        "addressRegion": "TX",
+        "addressCountry": "US"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Michael Tatum"
+      },
+      "areaServed": "Texas",
+      "serviceType": ["Cybersecurity", "Security Auditing", "Compliance Consulting"]
+    }
+    </script>
+
+    <style>
+        :root {
+            --harbor-deep: #0B3D59;
+            --sonar-mist: #82A7A6;
+            --shore-sand: #C9A66B;
+            --earth-rock: #2A2622;
+            --bg-shell: #F4F1EA;
+            
+            /* Bold Tech Green palette */
+            --forest-light: #81C784;
+            --aqua-marine: #80CBC4;
+            --seafoam-success: #D4EDDA;
+            --deep-ocean: #1B4D3E; /* Dark professional green for footer */
+            
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            
+            /* 8px spacing system */
+            --space-xs: 8px;
+            --space-sm: 16px;
+            --space-md: 24px;
+            --space-lg: 32px;
+            --space-xl: 48px;
+            --space-2xl: 64px;
+            --space-3xl: 96px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Reduced motion for accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            background-color: var(--bg-shell);
+            color: var(--earth-rock);
+            line-height: 1.6;
+            text-align: center;
+        }
+        
+        /* Skip to content link for accessibility */
+        .skip-to-content {
+            position: absolute;
+            top: -100px;
+            left: 0;
+            background: var(--harbor-deep);
+            color: white;
+            padding: var(--space-sm) var(--space-md);
+            text-decoration: none;
+            font-weight: 600;
+            z-index: 10000;
+            transition: top 0.3s;
+        }
+        
+        .skip-to-content:focus {
+            top: 0;
+        }
+
+        header {
+            position: fixed;
+            top: 0; width: 100%; z-index: 1000;
+            background: rgba(244, 241, 234, 0.95);
+            backdrop-filter: blur(16px);
+            border-bottom: 2px solid var(--sonar-mist);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            nav { flex-direction: row; justify-content: space-between; }
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--harbor-deep);
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        .nav-links { display: flex; gap: 2rem; justify-content: center; }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--earth-rock);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: 4px;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        /* Hover and focus states */
+        .nav-links a:hover,
+        .nav-links a:focus {
+            color: var(--harbor-deep);
+            outline: none;
+        }
+        
+        /* Visible focus indicator */
+        .nav-links a:focus-visible {
+            outline: 3px solid var(--shore-sand);
+            outline-offset: 4px;
+        }
+        
+        /* Underline animation */
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: var(--space-sm);
+            right: var(--space-sm);
+            height: 2px;
+            background: var(--shore-sand);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .nav-links a:hover::after {
+            transform: scaleX(1);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: linear-gradient(165deg, var(--harbor-deep) 0%, #154c6e 60%, #1B5850 100%);
+            padding: 180px 2rem 140px;
+            color: white;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* CLI-Style Background Brand Label */
+        .hero-brand-label {
+            font-size: clamp(3rem, 10vw, 9rem);
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+            font-weight: 900;
+            position: absolute;
+            top: 140px;
+            z-index: 1;
+            opacity: 0.25;
+            color: rgba(201, 166, 107, 0.9);
+            pointer-events: none;
+            font-family: 'JetBrains Mono', monospace;
+            line-height: 1;
+            text-shadow: 0 2px 20px rgba(201, 166, 107, 0.3);
+            will-change: transform;
+            transition: transform 0.5s ease-out;
+        }
+
+        /* Scaled Hero Sonar Container (2x: 480px) */
+        .hero-sonar-container {
+            width: 480px; 
+            height: 480px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .sonar-ring-static {
+            position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid rgba(130, 167, 166, 0.15);
+            border-radius: 50%;
+        }
+
+        .sonar-ping {
+            position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            border: 3px solid var(--sonar-mist);
+            border-radius: 50%;
+            animation: sonarPulseLarge 4s infinite;
+            will-change: width, height, opacity;
+        }
+
+        @keyframes sonarPulseLarge { 
+            0% { width: 140px; height: 140px; opacity: 0.8; }
+            100% { width: 480px; height: 480px; opacity: 0; }
+        }
+
+        /* Hero Text Content Integrated Overlay */
+        .hero h1 { 
+            font-size: clamp(1.8rem, 4.5vw, 4.2rem); 
+            margin: -80px 0 1.5rem; 
+            font-weight: 900;
+            z-index: 10;
+            white-space: nowrap;
+            text-shadow: 0 4px 30px rgba(0,0,0,0.5);
+            letter-spacing: -1px;
+            text-wrap: balance;
+        }
+
+        .tagline { 
+            max-width: 1000px; 
+            margin: 0 auto 3rem; 
+            opacity: 0.95; 
+            font-size: 1.2rem;
+            z-index: 10;
+            white-space: nowrap;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            font-weight: 500;
+            text-wrap: balance;
+            line-height: 1.7;
+        }
+        
+        /* Better typography hierarchy */
+        h2 {
+            text-wrap: balance;
+            line-height: 1.2;
+        }
+        
+        /* Green underline accent for section headings */
+        .section-padding h2,
+        .compliance-banner h2 {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 1rem;
+        }
+        
+        .section-padding h2::after,
+        .compliance-banner h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--forest-light) 0%, var(--aqua-marine) 100%);
+            border-radius: 2px;
+        }
+        
+        h3 {
+            text-wrap: balance;
+            line-height: 1.3;
+        }
+        
+        p {
+            text-wrap: pretty;
+        }
+
+        .btn-anchor {
+            background: var(--shore-sand);
+            color: white;
+            padding: 1.2rem 3.5rem;
+            text-decoration: none;
+            font-weight: 800;
+            text-transform: uppercase;
+            border-radius: 6px;
+            transition: var(--transition);
+            z-index: 10;
+            box-shadow: 0 4px 20px rgba(201, 166, 107, 0.3);
+            letter-spacing: 0.5px;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            min-height: 44px; /* Touch target size */
+            min-width: 44px;
+        }
+        
+        .btn-anchor::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .btn-anchor:hover { 
+            background: #d4b680; 
+            transform: translateY(-3px);
+            box-shadow: 0 6px 30px rgba(201, 166, 107, 0.4);
+        }
+        
+        .btn-anchor:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        /* Focus state for accessibility */
+        .btn-anchor:focus-visible {
+            outline: 3px solid white;
+            outline-offset: 4px;
+        }
+        
+        /* Active/pressed state */
+        .btn-anchor:active {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 15px rgba(201, 166, 107, 0.3);
+        }
+        
+        /* Loading state */
+        .btn-anchor.loading {
+            pointer-events: none;
+            opacity: 0.7;
+        }
+        
+        .btn-anchor.loading::after {
+            content: '';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            border: 2px solid white;
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: btnSpin 0.8s linear infinite;
+        }
+        
+        @keyframes btnSpin {
+            to { transform: translateY(-50%) rotate(360deg); }
+        }
+
+        /* --- Content Sections --- */
+        .section-padding { padding: 8rem 2rem; max-width: 1200px; margin: 0 auto; }
+        
+        .stats-bar { 
+            background: var(--seafoam-success); 
+            padding: 4rem 1rem; 
+            border-bottom: 1px solid rgba(129, 199, 132, 0.3); 
+            position: relative; 
+            z-index: 10;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+        
+        .stats-grid { 
+            max-width: 1000px; margin: 0 auto;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+        }
+        
+        .stat-val { 
+            display: block; 
+            font-size: 2.5rem; 
+            font-weight: 900; 
+            color: var(--harbor-deep); 
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+        }
+        
+        .stat-label { 
+            display: block; 
+            font-size: 0.75rem; 
+            text-transform: uppercase; 
+            color: var(--sonar-mist); 
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        /* Fade in animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in:nth-child(1) { animation-delay: 0.1s; }
+        .fade-in:nth-child(2) { animation-delay: 0.2s; }
+        .fade-in:nth-child(3) { animation-delay: 0.3s; }
+        .fade-in:nth-child(4) { animation-delay: 0.4s; }
+        .fade-in:nth-child(5) { animation-delay: 0.5s; }
+        .fade-in:nth-child(6) { animation-delay: 0.6s; }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .feature-dock {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(130, 167, 166, 0.15);
+            text-align: left;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Alternating green backgrounds */
+        .feature-dock:nth-child(1) { background: var(--forest-light); border-color: rgba(129, 199, 132, 0.3); }
+        .feature-dock:nth-child(2) { background: white; }
+        .feature-dock:nth-child(3) { background: var(--aqua-marine); border-color: rgba(128, 203, 196, 0.3); }
+        .feature-dock:nth-child(4) { background: white; }
+        .feature-dock:nth-child(5) { background: var(--forest-light); border-color: rgba(129, 199, 132, 0.3); }
+        .feature-dock:nth-child(6) { background: var(--aqua-marine); border-color: rgba(128, 203, 196, 0.3); }
+        
+        .feature-dock::before {
+            content: '⚓';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            opacity: 0.1;
+            transition: all 0.3s ease;
+        }
+
+        .feature-dock:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            border-color: var(--sonar-mist);
+        }
+        
+        .feature-dock:hover::before {
+            opacity: 0.2;
+            transform: rotate(15deg);
+        }
+        
+        /* Focus state for keyboard navigation */
+        .feature-dock:focus-within {
+            outline: 3px solid var(--shore-sand);
+            outline-offset: 2px;
+        }
+
+        .feature-dock h3 {
+            font-size: 1.3rem;
+            color: var(--harbor-deep);
+            margin-bottom: 1rem;
+            font-weight: 800;
+            text-wrap: balance;
+        }
+
+        .feature-dock p {
+            line-height: 1.7;
+            color: #333;
+        }
+
+        .compliance-banner {
+            background: linear-gradient(135deg, var(--harbor-deep) 0%, var(--deep-ocean) 100%);
+            padding: 6rem 2rem;
+            color: white;
+        }
+
+        .banner-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .engagement-card {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #F8FDF9;
+            padding: 4rem 3rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.1);
+            border: 1px solid rgba(129, 199, 132, 0.15);
+        }
+
+        .interior-card {
+            background: var(--seafoam-success);
+            border: 1px solid rgba(129, 199, 132, 0.3);
+            border-radius: 8px;
+            padding: 2.5rem 2rem;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .engagement-list { 
+            list-style: none; 
+            margin: 0; 
+            padding: 0; 
+        }
+        
+        .engagement-list li { 
+            margin-bottom: 1rem; 
+            padding-left: 1.8rem; 
+            position: relative; 
+            font-weight: 600; 
+            color: #1a1816;
+            line-height: 1.6;
+        }
+        
+        .engagement-list li::before { 
+            content: '⚓'; 
+            position: absolute; 
+            left: 0; 
+            color: var(--harbor-deep);
+            font-size: 1.1rem;
+        }
+        
+        .engagement-list li:last-child { 
+            margin-bottom: 0; 
+        }
+
+        .disclosure-box {
+            margin-top: 3rem; 
+            padding: 1.5rem; 
+            background: #eee; 
+            font-size: 0.75rem; 
+            text-align: left; 
+            border-left: 4px solid var(--shore-sand);
+            border-radius: 4px;
+        }
+
+        footer { 
+            background: var(--deep-ocean); 
+            color: var(--sonar-mist); 
+            padding: 4rem 2rem; 
+            border-top: 4px solid var(--shore-sand); 
+        }
+
+        /* Responsive Fixes */
+        @media (max-width: 1100px) {
+            .hero h1, .tagline { white-space: normal; }
+        }
+
+        /* Scroll progress indicator */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--forest-light) 0%, var(--aqua-marine) 100%);
+            z-index: 10001;
+            transition: width 0.1s ease-out;
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--shore-sand);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .back-to-top:hover {
+            background: #d4b680;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+        }
+
+        .back-to-top:active {
+            transform: translateY(-1px);
+        }
+
+        /* Cookie consent banner */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(27, 77, 62, 0.98);
+            backdrop-filter: blur(16px);
+            color: white;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+            z-index: 10000;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            border-top: 3px solid var(--forest-light);
+        }
+
+        .cookie-banner.visible {
+            transform: translateY(0);
+        }
+
+        .cookie-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .cookie-text {
+            flex: 1;
+            min-width: 300px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .cookie-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .cookie-btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cookie-btn-accept {
+            background: var(--shore-sand);
+            color: white;
+        }
+
+        .cookie-btn-accept:hover {
+            background: #d4b680;
+            transform: translateY(-2px);
+        }
+
+        .cookie-btn-decline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .cookie-btn-decline:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        @media (max-width: 1100px) {
+            .hero h1, .tagline { white-space: normal; }
+        }
+
+        @media (max-width: 768px) {
+            .hero-sonar-container { width: 300px; height: 300px; }
+            @keyframes sonarPulseLarge { 
+                0% { width: 100px; height: 100px; opacity: 0.8; }
+                100% { width: 300px; height: 300px; opacity: 0; }
+            }
+            .hero-brand-label { font-size: 4rem; top: 120px; }
+            .hero h1 { margin-top: -40px; font-size: 1.6rem; }
+            .hero { clip-path: none; padding: 160px 1.5rem 120px; }
+            .nav-links { gap: 1.5rem; }
+            .features-grid { grid-template-columns: 1fr; }
+            .engagement-card { padding: 2.5rem 1.5rem; }
+        }
+        
+        /* Print styles */
+        @media print {
+            .skip-to-content,
+            header,
+            .hero-sonar-container,
+            .sonar-ring-static,
+            .sonar-ping {
+                display: none !important;
+            }
+            
+            body {
+                background: white;
+                color: black;
+            }
+            
+            .hero {
+                background: white;
+                color: black;
+                clip-path: none;
+                padding: 2rem;
+            }
+            
+            .btn-anchor {
+                border: 2px solid black;
+                color: black;
+                background: white;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <!-- Scroll progress indicator -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Back to top button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+    <!-- Cookie consent banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <strong>Privacy Notice:</strong> This site uses minimal analytics to improve service quality. No personal data is sold or shared. By continuing, you consent to our <a href="#" style="color: var(--shore-sand); text-decoration: underline;">Privacy Policy</a>.
+            </div>
+            <div class="cookie-actions">
+                <button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accept</button>
+                <button class="cookie-btn cookie-btn-decline" id="cookieDecline">Decline</button>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <nav aria-label="Main navigation">
+            <a href="/" class="logo" aria-label="HarborSonar Security Home">
+                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 12px;" role="img" aria-label="Anchor icon">
+                    <circle cx="50" cy="42" r="38" stroke="var(--sonar-mist)" stroke-width="2.5" opacity="0.2"/>
+                    <circle cx="50" cy="42" r="30" stroke="var(--sonar-mist)" stroke-width="2.5" opacity="0.35"/>
+                    <circle cx="50" cy="42" r="22" stroke="var(--sonar-mist)" stroke-width="2.5" opacity="0.55"/>
+                    <circle cx="50" cy="42" r="14" stroke="var(--sonar-mist)" stroke-width="2.5" opacity="0.8"/>
+                    <circle cx="50" cy="24" r="5" stroke="var(--harbor-deep)" stroke-width="4" fill="none"/>
+                    <line x1="50" y1="29" x2="50" y2="78" stroke="var(--harbor-deep)" stroke-width="4" stroke-linecap="round"/>
+                    <line x1="38" y1="40" x2="62" y2="40" stroke="var(--harbor-deep)" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M30 68C30 78 39 86 50 86C61 86 70 78 70 68" stroke="var(--harbor-deep)" stroke-width="4" stroke-linecap="round" fill="none"/>
+                    <path d="M30 68L24 62" stroke="var(--sonar-mist)" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M70 68L76 62" stroke="var(--sonar-mist)" stroke-width="4" stroke-linecap="round"/>
+                </svg>
+                HarborSonar
+            </a>
+            <div class="nav-links">
+                <a href="#pipeline">Pipeline</a>
+                <a href="#compliance">Compliance</a>
+                <a href="#audit">Engagement</a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="hero" aria-label="Hero section">
+            <div class="hero-brand-label" aria-hidden="true">HarborSonar</div>
+            
+            <div class="hero-sonar-container" role="img" aria-label="Animated sonar detection visualization">
+                <div class="sonar-ring-static" style="width: 480px; height: 480px;"></div>
+                <div class="sonar-ring-static" style="width: 360px; height: 360px;"></div>
+                <div class="sonar-ring-static" style="width: 240px; height: 240px;"></div>
+                
+                <div class="sonar-ping"></div>
+                <div class="sonar-ping" style="animation-delay: 1.5s;"></div>
+                
+                <div style="z-index: 5;">
+                    <svg width="140" height="140" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="24" r="6" stroke="var(--shore-sand)" stroke-width="4" fill="none"/>
+                        <line x1="50" y1="30" x2="50" y2="82" stroke="var(--shore-sand)" stroke-width="4" stroke-linecap="round"/>
+                        <line x1="36" y1="42" x2="64" y2="42" stroke="var(--shore-sand)" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M28 70C28 81 38 90 50 90C62 90 72 81 72 70" stroke="white" stroke-width="4" stroke-linecap="round" fill="none"/>
+                        <path d="M28 70L22 63" stroke="var(--shore-sand)" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M72 70L78 63" stroke="var(--shore-sand)" stroke-width="4" stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+
+            <h1>Automated Passive Surface Analysis.</h1>
+            <p class="tagline">Passive discovery via scripted pipelines and Lumo-enhanced interpretation for Texas infrastructure.</p>
+            <a href="#audit" class="btn-anchor">Request Passive Audit →</a>
+        </section>
+
+        <section class="stats-bar">
+            <div class="stats-grid">
+                <div><span class="stat-val">Zero</span><span class="stat-label">Production Impact</span></div>
+                <div><span class="stat-val">Scripted</span><span class="stat-label">Repeatable Pipeline</span></div>
+                <div><span class="stat-val">Lumo</span><span class="stat-label">Enhanced Insights</span></div>
+            </div>
+        </section>
+
+        <section class="section-padding" id="pipeline">
+            <h2 style="font-size: 2.2rem; color: var(--harbor-deep); margin-bottom: 1rem; font-weight: 900;">The Automated Pipeline</h2>
+            <p style="font-size: 1.1rem; color: #666;">A production-ready approach to security analytics that prioritizes repeatability and objective data.</p>
+            
+            <div class="features-grid">
+                <div class="feature-dock fade-in">
+                    <h3>Passive Asset Discovery</h3>
+                    <p>Automated mapping of publicly exposed subdomains, open ports, and DNS configurations using non-intrusive industry-standard scripts.</p>
+                </div>
+                <div class="feature-dock fade-in">
+                    <h3>Lumo-Enhanced Interpretation</h3>
+                    <p>Utilizing high-level AI synthesis to distill raw technical data into actionable executive themes and prioritized risk categories.</p>
+                </div>
+                <div class="feature-dock fade-in">
+                    <h3>Texas Compliance Ready</h3>
+                    <p>Designed to meet 2026 Texas Data Privacy (TDPSA) and AI Governance (TRAIGA) standards for small business cybersecurity.</p>
+                </div>
+                <div class="feature-dock fade-in">
+                    <h3>Non-Intrusive Analysis</h3>
+                    <p>Strictly passive methodology. No active exploitation, no brute-forcing, and zero risk of service disruption to your infrastructure.</p>
+                </div>
+                <div class="feature-dock fade-in">
+                    <h3>Strategic Risk Mapping</h3>
+                    <p>Mapping discovered services against global CVE databases to identify critical vulnerabilities before they are exploited.</p>
+                </div>
+                <div class="feature-dock fade-in">
+                    <h3>Direct Expert Validation</h3>
+                    <p>Bypass the agency bloat. Every AI-assisted finding is manually verified and validated by the lead security analyst in Georgetown.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="compliance-banner" id="compliance">
+            <div class="banner-content">
+                <h2 style="color: var(--shore-sand); margin-bottom: 1.5rem; font-weight: 900; font-size: 2rem;">Built for Texas 2026 Standards</h2>
+                <p style="font-size: 1.1rem; opacity: 0.95; line-height: 1.8;">HarborSonar is built on a foundation of professional diligence. By maintaining a Tier 1 Safe Harbor under Texas SB 2610, we provide clients with a deep-technical proof of due diligence while strictly adhering to local AI and data privacy mandates.</p>
+            </div>
+        </section>
+
+        <section class="section-padding" id="audit">
+            <div class="engagement-card">
+                <h2 style="color: var(--harbor-deep); font-weight: 900; font-size: 2rem;">Automated Surface Audit</h2>
+                <p style="margin: 1rem 0; font-weight: 800; color: var(--shore-sand); font-size: 1.1rem;">Professional Security Discovery & Interpretation</p>
+                
+                <div class="interior-card">
+                    <ul class="engagement-list">
+                        <li>Scripted Attack Surface Mapping</li>
+                        <li>Automated Configuration Review</li>
+                        <li>Lumo-Synthesized Risk Analysis</li>
+                        <li>Executive Remediation Roadmap</li>
+                        <li>Non-Intrusive, Passive Methodology</li>
+                    </ul>
+                </div>
+
+                <a href="/cdn-cgi/l/email-protection#4e3d3b3e3e213c3a0e262f3c2c213c3d21202f3c602d2123" class="btn-anchor" style="display: inline-block; margin-top: 1.5rem;">Inquire for Engagement</a>
+                
+                <div class="disclosure-box">
+                    <strong>AI DISCLOSURE (TX TRAIGA 2026):</strong><br>
+                    HarborSonar utilizes Lumo (AI) to interpret raw technical data. All findings are manually verified by Michael Tatum to ensure accuracy. Lumo does not make autonomous "consequential decisions"; professional judgment is manually applied to all deliverables.
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div style="max-width: 1200px; margin: 0 auto; padding-bottom: 2rem;">
+            <h3 style="color: white; margin-bottom: 0.5rem; font-weight: 900;">HarborSonar Security</h3>
+            <p style="font-size: 0.9rem;">Non-Intrusive Surface Analysis & Cybersecurity Interpretation.</p>
+            <p style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7;">Georgetown, Texas | Est. 2026</p>
+        </div>
+        <div style="opacity: 0.6; font-size: 0.75rem; padding-top: 2rem; border-top: 1px solid rgba(130,167,166,0.2);">
+            &copy; 2026 HarborSonar. All rights reserved. Professional Services provided by Michael Tatum.
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll with offset for fixed header
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Scroll progress indicator
+        const scrollProgress = document.getElementById('scrollProgress');
+        if (scrollProgress) {
+            window.addEventListener('scroll', () => {
+                const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (window.pageYOffset / windowHeight) * 100;
+                scrollProgress.style.width = scrolled + '%';
+            });
+        }
+
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        if (backToTop) {
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // Cookie consent banner
+        const cookieBanner = document.getElementById('cookieBanner');
+        const cookieAccept = document.getElementById('cookieAccept');
+        const cookieDecline = document.getElementById('cookieDecline');
+
+        // Check if user has already made a choice
+        const cookieConsent = localStorage.getItem('cookieConsent');
+        
+        if (!cookieConsent) {
+            // Show banner after 2 seconds
+            setTimeout(() => {
+                cookieBanner.classList.add('visible');
+            }, 2000);
+        }
+
+        if (cookieAccept) {
+            cookieAccept.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'accepted');
+                cookieBanner.classList.remove('visible');
+                // Initialize analytics here if needed
+                console.log('Analytics enabled');
+            });
+        }
+
+        if (cookieDecline) {
+            cookieDecline.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'declined');
+                cookieBanner.classList.remove('visible');
+                console.log('Analytics disabled');
+            });
+        }
+
+        // Parallax effect for hero brand label
+        const heroBrandLabel = document.querySelector('.hero-brand-label');
+        if (heroBrandLabel && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const rate = scrolled * 0.3;
+                heroBrandLabel.style.transform = `translateY(${rate}px)`;
+            });
+        }
+
+        // Intersection Observer for fade-in animations
+        if ('IntersectionObserver' in window && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                el.style.animationPlayState = 'paused';
+                observer.observe(el);
+            });
+        }
+
+        // Button loading state (example for form submission)
+        document.querySelectorAll('.btn-anchor').forEach(button => {
+            button.addEventListener('click', function(e) {
+                // Only add loading state if it's a form submission
+                if (this.closest('form')) {
+                    this.classList.add('loading');
+                    // Remove loading state after submission (adjust as needed)
+                    setTimeout(() => {
+                        this.classList.remove('loading');
+                    }, 2000);
+                }
+            });
+        });
+
+        // Stats counter animation
+        const animateCounter = (element, target, duration = 2000) => {
+            const start = 0;
+            const increment = target / (duration / 16);
+            let current = start;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current);
+                }
+            }, 16);
+        };
+
+        // Observe stats section for counter animation
+        if ('IntersectionObserver' in window) {
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // You can customize this for numerical stats
+                        // Example: animateCounter(element, 1000, 2000);
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            const statsSection = document.querySelector('.stats-bar');
+            if (statsSection) {
+                statsObserver.observe(statsSection);
+            }
+        }
+
+        // Progressive enhancement - ensure site works without JavaScript
+        document.documentElement.classList.add('js-enabled');
+    </script>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+</body>
+</html>
