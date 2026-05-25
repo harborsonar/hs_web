@@ -49,7 +49,7 @@
       },
       "founder": {
         "@type": "Person",
-        "name": "Michael Tatum"
+        "name": "A. Michael Tatum"
       },
       "areaServed": "Texas",
       "serviceType": ["Cybersecurity", "Security Auditing", "Compliance Consulting"]
@@ -137,6 +137,7 @@
             background: rgba(244, 241, 234, 0.95);
             backdrop-filter: blur(16px);
             border-bottom: 2px solid var(--sonar-mist);
+            scroll-margin-top: 80px;
         }
 
         nav {
@@ -216,6 +217,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            scroll-margin-top: 80px;
         }
 
         /* CLI-Style Background Brand Label */
@@ -275,7 +277,6 @@
             margin: -80px 0 1.5rem; 
             font-weight: 900;
             z-index: 10;
-            white-space: nowrap;
             text-shadow: 0 4px 30px rgba(0,0,0,0.5);
             letter-spacing: -1px;
             text-wrap: balance;
@@ -287,7 +288,6 @@
             opacity: 0.95; 
             font-size: 1.2rem;
             z-index: 10;
-            white-space: nowrap;
             text-shadow: 0 2px 10px rgba(0,0,0,0.3);
             font-weight: 500;
             text-wrap: balance;
@@ -306,19 +306,6 @@
             position: relative;
             display: inline-block;
             padding-bottom: 1rem;
-        }
-        
-        .section-padding h2::after,
-        .compliance-banner h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--forest-light) 0%, var(--aqua-marine) 100%);
-            border-radius: 2px;
         }
         
         h3 {
@@ -347,6 +334,8 @@
             overflow: hidden;
             min-height: 44px; /* Touch target size */
             min-width: 44px;
+            border: none;
+            cursor: pointer;
         }
         
         .btn-anchor::before {
@@ -384,33 +373,14 @@
             transform: translateY(-1px);
             box-shadow: 0 2px 15px rgba(201, 166, 107, 0.3);
         }
-        
-        /* Loading state */
-        .btn-anchor.loading {
-            pointer-events: none;
-            opacity: 0.7;
-        }
-        
-        .btn-anchor.loading::after {
-            content: '';
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 16px;
-            height: 16px;
-            border: 2px solid white;
-            border-top-color: transparent;
-            border-radius: 50%;
-            animation: btnSpin 0.8s linear infinite;
-        }
-        
-        @keyframes btnSpin {
-            to { transform: translateY(-50%) rotate(360deg); }
-        }
 
         /* --- Content Sections --- */
-        .section-padding { padding: 8rem 2rem; max-width: 1200px; margin: 0 auto; }
+        .section-padding { 
+            padding: 8rem 2rem; 
+            max-width: 1200px; 
+            margin: 0 auto;
+            scroll-margin-top: 80px;
+        }
         
         .stats-bar { 
             background: var(--seafoam-success); 
@@ -422,8 +392,10 @@
         }
         
         .stats-grid { 
-            max-width: 1000px; margin: 0 auto;
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            max-width: 1000px; 
+            margin: 0 auto;
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 3rem;
         }
         
@@ -485,13 +457,8 @@
             overflow: hidden;
         }
         
-        /* Alternating green backgrounds */
-        .feature-dock:nth-child(1) { background: var(--forest-light); border-color: rgba(129, 199, 132, 0.3); }
-        .feature-dock:nth-child(2) { background: white; }
-        .feature-dock:nth-child(3) { background: var(--aqua-marine); border-color: rgba(128, 203, 196, 0.3); }
-        .feature-dock:nth-child(4) { background: white; }
-        .feature-dock:nth-child(5) { background: var(--forest-light); border-color: rgba(129, 199, 132, 0.3); }
-        .feature-dock:nth-child(6) { background: var(--aqua-marine); border-color: rgba(128, 203, 196, 0.3); }
+        /* Alternating backgrounds: all white base, colored on even indices */
+        .feature-dock:nth-child(even) { background: var(--forest-light); border-color: rgba(129, 199, 132, 0.3); }
         
         .feature-dock::before {
             content: '⚓';
@@ -530,13 +497,14 @@
 
         .feature-dock p {
             line-height: 1.7;
-            color: #333;
+            color: var(--harbor-deep);
         }
 
         .compliance-banner {
             background: linear-gradient(135deg, var(--harbor-deep) 0%, var(--deep-ocean) 100%);
             padding: 6rem 2rem;
             color: white;
+            scroll-margin-top: 80px;
         }
 
         .banner-content {
@@ -574,7 +542,7 @@
             padding-left: 1.8rem; 
             position: relative; 
             font-weight: 600; 
-            color: #1a1816;
+            color: var(--harbor-deep);
             line-height: 1.6;
         }
         
@@ -593,10 +561,11 @@
         .disclosure-box {
             margin-top: 3rem; 
             padding: 1.5rem; 
-            background: #eee; 
+            background: rgba(129, 199, 132, 0.1); 
+            color: var(--harbor-deep);
             font-size: 0.75rem; 
             text-align: left; 
-            border-left: 4px solid var(--shore-sand);
+            border-left: 4px solid var(--forest-light);
             border-radius: 4px;
         }
 
@@ -607,9 +576,22 @@
             border-top: 4px solid var(--shore-sand); 
         }
 
-        /* Responsive Fixes */
-        @media (max-width: 1100px) {
-            .hero h1, .tagline { white-space: normal; }
+        .github-link {
+            color: var(--sonar-mist);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: opacity 0.3s;
+        }
+
+        .github-link:hover {
+            opacity: 1;
+        }
+
+        .privacy-link {
+            color: var(--shore-sand);
+            text-decoration: underline;
         }
 
         /* Scroll progress indicator */
@@ -660,6 +642,11 @@
 
         .back-to-top:active {
             transform: translateY(-1px);
+        }
+
+        .back-to-top:focus-visible {
+            outline: 3px solid white;
+            outline-offset: 4px;
         }
 
         /* Cookie consent banner */
@@ -728,6 +715,11 @@
             transform: translateY(-2px);
         }
 
+        .cookie-btn-accept:focus-visible {
+            outline: 3px solid white;
+            outline-offset: 2px;
+        }
+
         .cookie-btn-decline {
             background: transparent;
             color: white;
@@ -738,22 +730,44 @@
             background: rgba(255,255,255,0.1);
         }
 
+        .cookie-btn-decline:focus-visible {
+            outline: 3px solid var(--shore-sand);
+            outline-offset: 2px;
+        }
+
+        /* Responsive Fixes */
         @media (max-width: 1100px) {
-            .hero h1, .tagline { white-space: normal; }
+            .hero h1 { white-space: normal; }
         }
 
         @media (max-width: 768px) {
             .hero-sonar-container { width: 300px; height: 300px; }
+            
             @keyframes sonarPulseLarge { 
                 0% { width: 100px; height: 100px; opacity: 0.8; }
                 100% { width: 300px; height: 300px; opacity: 0; }
             }
+            
             .hero-brand-label { font-size: 4rem; top: 120px; }
             .hero h1 { margin-top: -40px; font-size: 1.6rem; }
             .hero { clip-path: none; padding: 160px 1.5rem 120px; }
             .nav-links { gap: 1.5rem; }
             .features-grid { grid-template-columns: 1fr; }
             .engagement-card { padding: 2.5rem 1.5rem; }
+            .stats-grid { gap: 2rem; }
+            
+            header {
+                scroll-margin-top: 70px;
+            }
+            
+            .section-padding {
+                scroll-margin-top: 70px;
+                padding: 4rem 1.5rem;
+            }
+            
+            .compliance-banner {
+                scroll-margin-top: 70px;
+            }
         }
         
         /* Print styles */
@@ -762,25 +776,28 @@
             header,
             .hero-sonar-container,
             .sonar-ring-static,
-            .sonar-ping {
+            .sonar-ping,
+            .scroll-progress,
+            .back-to-top,
+            .cookie-banner {
                 display: none !important;
             }
             
             body {
                 background: white;
-                color: black;
+                color: var(--harbor-deep);
             }
             
             .hero {
                 background: white;
-                color: black;
+                color: var(--harbor-deep);
                 clip-path: none;
                 padding: 2rem;
             }
             
             .btn-anchor {
-                border: 2px solid black;
-                color: black;
+                border: 2px solid var(--harbor-deep);
+                color: var(--harbor-deep);
                 background: white;
             }
         }
@@ -800,7 +817,7 @@
     <div class="cookie-banner" id="cookieBanner">
         <div class="cookie-content">
             <div class="cookie-text">
-                <strong>Privacy Notice:</strong> This site uses minimal analytics to improve service quality. No personal data is sold or shared. By continuing, you consent to our <a href="#" style="color: var(--shore-sand); text-decoration: underline;">Privacy Policy</a>.
+                <strong>Privacy Notice:</strong> This site uses minimal analytics to improve service quality. No personal data is sold or shared. By continuing, you consent to our <a href="/privacy" class="privacy-link">Privacy Policy</a>.
             </div>
             <div class="cookie-actions">
                 <button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accept</button>
@@ -810,6 +827,9 @@
     </div>
 
     <header>
+        <div style="background: linear-gradient(90deg, var(--forest-light) 0%, var(--aqua-marine) 100%); padding: 0.8rem 2rem; text-align: center; font-size: 0.85rem; font-weight: 700; color: white; width: 100%;">
+            ⚡ Currently in pre-launch — Service launches Q4 2026.
+        </div>
         <nav aria-label="Main navigation">
             <a href="/" class="logo" aria-label="HarborSonar Security Home">
                 <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 12px;" role="img" aria-label="Anchor icon">
@@ -828,6 +848,8 @@
             </a>
             <div class="nav-links">
                 <a href="#pipeline">Pipeline</a>
+                <a href="#transparency">Transparency</a>
+                <a href="#faq">FAQ</a>
                 <a href="#compliance">Compliance</a>
                 <a href="#audit">Engagement</a>
             </div>
@@ -835,7 +857,7 @@
     </header>
 
     <main id="main-content">
-        <section class="hero" aria-label="Hero section">
+        <section class="hero" id="hero" aria-label="Hero section">
             <div class="hero-brand-label" aria-hidden="true">HarborSonar</div>
             
             <div class="hero-sonar-container" role="img" aria-label="Animated sonar detection visualization">
@@ -860,10 +882,11 @@
 
             <h1>Automated Passive Surface Analysis.</h1>
             <p class="tagline">Passive discovery via scripted pipelines and Lumo-enhanced interpretation for Texas infrastructure.</p>
-            <a href="#audit" class="btn-anchor">Request Passive Audit →</a>
+            <a href="#audit" class="btn-anchor">Request Mapping →</a>
         </section>
 
         <section class="stats-bar">
+            <h2 style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;">Key Metrics</h2>
             <div class="stats-grid">
                 <div><span class="stat-val">Zero</span><span class="stat-label">Production Impact</span></div>
                 <div><span class="stat-val">Scripted</span><span class="stat-label">Repeatable Pipeline</span></div>
@@ -872,68 +895,269 @@
         </section>
 
         <section class="section-padding" id="pipeline">
-            <h2 style="font-size: 2.2rem; color: var(--harbor-deep); margin-bottom: 1rem; font-weight: 900;">The Automated Pipeline</h2>
-            <p style="font-size: 1.1rem; color: #666;">A production-ready approach to security analytics that prioritizes repeatability and objective data.</p>
+            <h2 style="font-size: 2.2rem; color: var(--harbor-deep); margin-bottom: 1rem; font-weight: 900;">The Passive Surface Pipeline</h2>
+            <p style="font-size: 1.1rem; color: var(--harbor-deep);">A production-ready approach to security analytics that prioritizes repeatability and objective data.</p>
             
             <div class="features-grid">
                 <div class="feature-dock fade-in">
                     <h3>Passive Asset Discovery</h3>
-                    <p>Automated mapping of publicly exposed subdomains, open ports, and DNS configurations using non-intrusive industry-standard scripts.</p>
+                    <p>Automated mapping of publicly exposed infrastructure. Comprehensive discovery of domains, subdomains, open ports, and service configurations.</p>
                 </div>
                 <div class="feature-dock fade-in">
-                    <h3>Lumo-Enhanced Interpretation</h3>
-                    <p>Utilizing high-level AI synthesis to distill raw technical data into actionable executive themes and prioritized risk categories.</p>
+                    <h3>AI-Enhanced Analysis</h3>
+                    <p>Intelligent synthesis of raw findings into executive summaries and prioritized risk categories. Full raw data included—teams can verify independently or skip AI synthesis entirely.</p>
                 </div>
                 <div class="feature-dock fade-in">
                     <h3>Texas Compliance Ready</h3>
-                    <p>Designed to meet 2026 Texas Data Privacy (TDPSA) and AI Governance (TRAIGA) standards for small business cybersecurity.</p>
+                    <p>TRAIGA AI disclosure included. SB 2610 Safe Harbor documentation provided. Full TDPSA-compliant data handling throughout engagement.</p>
                 </div>
                 <div class="feature-dock fade-in">
                     <h3>Non-Intrusive Analysis</h3>
-                    <p>Strictly passive methodology. No active exploitation, no brute-forcing, and zero risk of service disruption to your infrastructure.</p>
+                    <p>Zero credentials required. No active exploitation, no brute-forcing. 100% passive methodology—production systems remain untouched.</p>
                 </div>
                 <div class="feature-dock fade-in">
-                    <h3>Strategic Risk Mapping</h3>
-                    <p>Mapping discovered services against global CVE databases to identify critical vulnerabilities before they are exploited.</p>
+                    <h3>Vulnerability Intelligence</h3>
+                    <p>Discovered services mapped against current threat databases. Critical vulnerabilities flagged with remediation priority scoring and risk assessment.</p>
                 </div>
                 <div class="feature-dock fade-in">
-                    <h3>Direct Expert Validation</h3>
-                    <p>Bypass the agency bloat. Every AI-assisted finding is manually verified and validated by the lead security analyst in Georgetown.</p>
+                    <h3>Expert Validation</h3>
+                    <p>Every finding manually reviewed by security professional. 15+ years expertise. Direct engagement—no agency intermediaries. Human judgment on every conclusion.</p>
                 </div>
+            </div>
+        </section>
+
+        <section id="transparency" style="background: var(--seafoam-success); padding: 6rem 2rem; border-top: 1px solid rgba(129, 199, 132, 0.3); border-bottom: 1px solid rgba(129, 199, 132, 0.3);">
+            <div style="max-width: 1200px; margin: 0 auto;">
+                <div style="text-align: center; position: relative; margin-bottom: 3rem;">
+                    <h2 style="font-size: 1.8rem; color: var(--harbor-deep); margin-bottom: 0; font-weight: 900; text-align: center;">Full Transparency</h2>
+                    <div style="position: absolute; bottom: -1rem; left: 50%; transform: translateX(-50%); width: 60px; height: 4px; background: linear-gradient(90deg, var(--forest-light) 0%, var(--aqua-marine) 100%); border-radius: 2px;"></div>
+                </div>
+                <div style="display: flex; justify-content: space-between; gap: 3rem; flex-wrap: nowrap;">
+                    <div style="flex: 1; text-align: center;">
+                        <h3 style="color: var(--harbor-deep); margin-bottom: 1rem; font-weight: 800;">Raw Data Included</h3>
+                        <p style="color: var(--harbor-deep); line-height: 1.7;">Every report includes complete raw technical data in standard formats. Teams can verify independently, conduct custom analysis, or bypass AI synthesis entirely.</p>
+                    </div>
+                    <div style="flex: 1; text-align: center;">
+                        <h3 style="color: var(--harbor-deep); margin-bottom: 1rem; font-weight: 800;">Human Verification</h3>
+                        <p style="color: var(--harbor-deep); line-height: 1.7;">Every AI-assisted finding is reviewed by security professional before delivery. No autonomous decisions. You get conclusions backed by human judgment.</p>
+                    </div>
+                    <div style="flex: 1; text-align: center;">
+                        <h3 style="color: var(--harbor-deep); margin-bottom: 1rem; font-weight: 800;">You Own the Results</h3>
+                        <p style="color: var(--harbor-deep); line-height: 1.7;">Complete dataset ownership. No vendor lock-in. Use raw data however you see fit—with our analysis, your own tools, or third-party verification.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding" id="faq" style="background: var(--bg-shell);">
+            <h2 style="font-size: 2.2rem; color: var(--harbor-deep); margin-bottom: 3rem; font-weight: 900; text-align: center;">Frequently Asked Questions</h2>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div style="margin-bottom: 2.5rem; padding: 2rem; background: white; border-radius: 8px; border-left: 4px solid var(--shore-sand);">
+                    <h3 style="color: var(--harbor-deep); font-size: 1.1rem; margin-bottom: 0.8rem;">How do you perform the analysis?</h3>
+                    <p style="color: var(--harbor-deep); line-height: 1.7;">We use industry-standard passive reconnaissance methods. No credentials required, no active testing. Your systems remain untouched throughout the engagement.</p>
+                </div>
+
+                <div style="margin-bottom: 2.5rem; padding: 2rem; background: white; border-radius: 8px; border-left: 4px solid var(--shore-sand);">
+                    <h3 style="color: var(--harbor-deep); font-size: 1.1rem; margin-bottom: 0.8rem;">How long does a typical engagement take?</h3>
+                    <p style="color: var(--harbor-deep); line-height: 1.7;">2–5 business days from kickoff to report delivery, depending on infrastructure size and complexity. Timeline confirmed at engagement.</p>
+                </div>
+
+                <div style="margin-bottom: 2.5rem; padding: 2rem; background: white; border-radius: 8px; border-left: 4px solid var(--shore-sand);">
+                    <h3 style="color: var(--harbor-deep); font-size: 1.1rem; margin-bottom: 0.8rem;">Do you need access to my systems?</h3>
+                    <p style="color: var(--harbor-deep); line-height: 1.7;">No. We analyze publicly discoverable information only. Zero credentials required. Your systems remain untouched throughout the engagement.</p>
+                </div>
+
+                <div style="margin-bottom: 2.5rem; padding: 2rem; background: white; border-radius: 8px; border-left: 4px solid var(--shore-sand);">
+                    <h3 style="color: var(--harbor-deep); font-size: 1.1rem; margin-bottom: 0.8rem;">What will I receive?</h3>
+                    <p style="color: var(--harbor-deep); line-height: 1.7;">PDF executive summary (1–2 pages) with detailed findings. Optional: direct briefing to discuss key findings and remediation strategy.</p>
+                </div>
+
+                <div style="margin-bottom: 2.5rem; padding: 2rem; background: white; border-radius: 8px; border-left: 4px solid var(--shore-sand);">
+                    <h3 style="color: var(--harbor-deep); font-size: 1.1rem; margin-bottom: 0.8rem;">Can we skip the AI analysis and work with raw data?</h3>
+                    <p style="color: var(--harbor-deep); line-height: 1.7;">Absolutely. Raw technical data is included with every report in standard formats. Teams skeptical of AI can verify findings independently or conduct their own analysis using the complete dataset.</p>
+                </div>
+
+                <div style="margin-bottom: 2.5rem; padding: 2rem; background: white; border-radius: 8px; border-left: 4px solid var(--shore-sand);">
+                    <h3 style="color: var(--harbor-deep); font-size: 1.1rem; margin-bottom: 0.8rem;">Are you TRAIGA 2026 compliant?</h3>
+                    <p style="color: var(--harbor-deep); line-height: 1.7;">Yes. Full AI disclosure included in all reports. Manual verification ensures no autonomous decisions. Every finding reviewed by security professional before delivery.</p>
+                </div>
+
+                <div style="margin-bottom: 2.5rem; padding: 2rem; background: white; border-radius: 8px; border-left: 4px solid var(--shore-sand);">
+                    <h3 style="color: var(--harbor-deep); font-size: 1.1rem; margin-bottom: 0.8rem;">Can results be integrated into our systems?</h3>
+                    <p style="color: var(--harbor-deep); line-height: 1.7;">We deliver results in standard formats. Contact us to discuss integration options with your existing tools and workflows.</p>
+                </div>
+
+                <div style="margin-bottom: 0; padding: 2rem; background: white; border-radius: 8px; border-left: 4px solid var(--shore-sand);">
+                    <h3 style="color: var(--harbor-deep); font-size: 1.1rem; margin-bottom: 0.8rem;">What happens next?</h3>
+                    <p style="color: var(--harbor-deep); line-height: 1.7;">You own the results. Optional follow-up consultation available to discuss remediation priorities and implementation strategy.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="analyst" style="background: var(--seafoam-success); padding: 6rem 2rem; border-top: 1px solid rgba(129, 199, 132, 0.3);">
+            <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+                <div style="text-align: center; position: relative; margin-bottom: 1rem;">
+                    <h2 style="font-size: 1.8rem; color: var(--harbor-deep); margin-bottom: 0; font-weight: 900; text-align: center;">About the Analyst</h2>
+                    <div style="position: absolute; bottom: -1rem; left: 50%; transform: translateX(-50%); width: 60px; height: 4px; background: linear-gradient(90deg, var(--forest-light) 0%, var(--aqua-marine) 100%); border-radius: 2px;"></div>
+                </div>
+                <p style="font-size: 1rem; line-height: 1.8; color: var(--harbor-deep);">
+                    <a href="https://michaeltatum.xyz" style="color: var(--harbor-deep); text-decoration: none; font-weight: 800; border-bottom: 2px solid var(--forest-light);">A. Michael Tatum</a> brings 15+ years of Senior Linux Systems Engineering expertise to HarborSonar engagements. His background spans infrastructure hardening and passive security methodologies. Every finding is personally reviewed for accuracy before client delivery. Manual verification ensures no autonomous decisions — the analyst, not the AI, approves what ships.
+                </p>
             </div>
         </section>
 
         <section class="compliance-banner" id="compliance">
             <div class="banner-content">
                 <h2 style="color: var(--shore-sand); margin-bottom: 1.5rem; font-weight: 900; font-size: 2rem;">Built for Texas 2026 Standards</h2>
-                <p style="font-size: 1.1rem; opacity: 0.95; line-height: 1.8;">HarborSonar is built on a foundation of professional diligence. By maintaining a Tier 1 Safe Harbor under Texas SB 2610, we provide clients with a deep-technical proof of due diligence while strictly adhering to local AI and data privacy mandates.</p>
+                <p style="font-size: 1.1rem; opacity: 0.95; line-height: 1.8;">HarborSonar is built on a foundation of professional diligence. By maintaining a Tier 1 Safe Harbor under Texas SB 2610, we provide clients with deep-technical proof of due diligence while strictly adhering to local AI and data privacy mandates.</p>
             </div>
+        </section>
+
+        <section class="section-padding" style="background: white;">
+            <div style="text-align: center; position: relative; margin-bottom: 3rem;">
+                <h2 style="font-size: 2.2rem; color: var(--harbor-deep); margin-bottom: 0; font-weight: 900; text-align: center;">Service Tiers</h2>
+                <div style="position: absolute; bottom: -1.5rem; left: 50%; transform: translateX(-50%); width: 60px; height: 4px; background: linear-gradient(90deg, var(--forest-light) 0%, var(--aqua-marine) 100%); border-radius: 2px;"></div>
+            </div>
+            
+            <div style="max-width: 1200px; margin: 0 auto; overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
+                    <thead>
+                        <tr style="border-bottom: 3px solid var(--sonar-mist);">
+                            <th style="text-align: left; padding: 1.5rem; font-weight: 900; color: var(--harbor-deep);">Feature</th>
+                            <th style="text-align: center; padding: 1.5rem; font-weight: 900; color: var(--harbor-deep);">Tier 1<br><span style="font-weight: 600; font-size: 0.85rem;">Compliance Check</span></th>
+                            <th style="text-align: center; padding: 1.5rem; font-weight: 900; color: var(--harbor-deep);">Tier 2<br><span style="font-weight: 600; font-size: 0.85rem;">Safe Harbor</span></th>
+                            <th style="text-align: center; padding: 1.5rem; font-weight: 900; color: var(--harbor-deep);">Tier 3 Standard<br><span style="font-weight: 600; font-size: 0.85rem;">Boardroom Defense</span></th>
+                            <th style="text-align: center; padding: 1.5rem; font-weight: 900; color: var(--harbor-deep);">Tier 3 Rush<br><span style="font-weight: 600; font-size: 0.85rem;">Boardroom Defense</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid rgba(130,167,166,0.2);">
+                            <td style="padding: 1.5rem; text-align: left; color: var(--harbor-deep);">Target Client Size</td>
+                            <td style="padding: 1.5rem; text-align: center; color: var(--harbor-deep);">1–5 employees</td>
+                            <td style="padding: 1.5rem; text-align: center; color: var(--harbor-deep);">5–20 employees</td>
+                            <td style="padding: 1.5rem; text-align: center; color: var(--harbor-deep);" colspan="2">Any size with hard deadline</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(130,167,166,0.2);">
+                            <td style="padding: 1.5rem; text-align: left; color: var(--harbor-deep);">Key Deliverables</td>
+                            <td style="padding: 1.5rem; text-align: center; color: var(--harbor-deep);">Executive Summary</td>
+                            <td style="padding: 1.5rem; text-align: center; color: var(--harbor-deep);">Voyage Report + Playbook</td>
+                            <td style="padding: 1.5rem; text-align: center; color: var(--harbor-deep);" colspan="2">Voyage Report + Playbook + Brief</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(130,167,166,0.2);">
+                            <td style="padding: 1.5rem; text-align: left; color: var(--harbor-deep);">Turnaround</td>
+                            <td style="padding: 1.5rem; text-align: center; color: var(--harbor-deep);">Standard</td>
+                            <td style="padding: 1.5rem; text-align: center; color: var(--harbor-deep);">5–7 days</td>
+                            <td style="padding: 1.5rem; text-align: center; color: var(--harbor-deep);">1 week</td>
+                            <td style="padding: 1.5rem; text-align: center; color: var(--harbor-deep);">Same week</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(130,167,166,0.2);">
+                            <td style="padding: 1.5rem; text-align: left; color: var(--harbor-deep);">Raw Technical Data</td>
+                            <td style="padding: 1.5rem; text-align: center; color: var(--harbor-deep);">✓</td>
+                            <td style="padding: 1.5rem; text-align: center; color: var(--harbor-deep);">✓</td>
+                            <td style="padding: 1.5rem; text-align: center; color: var(--harbor-deep);">✓</td>
+                            <td style="padding: 1.5rem; text-align: center; color: var(--harbor-deep);">✓</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(130,167,166,0.2);">
+                            <td style="padding: 1.5rem; text-align: left; color: var(--harbor-deep);">Pricing</td>
+                            <td style="padding: 1.5rem; text-align: center; color: var(--harbor-deep);">$399</td>
+                            <td style="padding: 1.5rem; text-align: center; color: var(--harbor-deep);">$1,950</td>
+                            <td style="padding: 1.5rem; text-align: center; color: var(--harbor-deep);">$4,500</td>
+                            <td style="padding: 1.5rem; text-align: center; color: var(--harbor-deep);">$6,500–$7,500</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1.5rem; text-align: left; color: var(--harbor-deep);">Subscription Options</td>
+                            <td style="padding: 1.5rem; text-align: center; color: var(--harbor-deep);">$175/mo</td>
+                            <td style="padding: 1.5rem; text-align: center; color: var(--harbor-deep);">$1,785/qtr or $6,069/yr</td>
+                            <td style="padding: 1.5rem; text-align: center; color: var(--harbor-deep);" colspan="2">One-time only</td>
+                        </tr>
+                        <tr style="border-top: 1px solid rgba(130,167,166,0.3);">
+                            <td style="padding: 1.5rem; text-align: left; color: var(--harbor-deep);">Remediation Model</td>
+                            <td style="padding: 1.5rem; text-align: center; color: var(--harbor-deep);">—</td>
+                            <td style="padding: 1.5rem; text-align: center; color: var(--harbor-deep);">Ansible YAML + Bash scripts (you execute)</td>
+                            <td style="padding: 1.5rem; text-align: center; color: var(--harbor-deep);" colspan="2">Ansible YAML + Bash scripts (you execute)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="text-align: center; margin-top: 2rem; color: var(--harbor-deep); font-size: 0.9rem;">Pricing custom to scope and deadline. <a href="mailto:support@harborsonar.com" style="color: var(--shore-sand); text-decoration: underline;">Contact for exact quote.</a></p>
         </section>
 
         <section class="section-padding" id="audit">
             <div class="engagement-card">
-                <h2 style="color: var(--harbor-deep); font-weight: 900; font-size: 2rem;">Automated Surface Audit</h2>
+                <h2 style="color: var(--harbor-deep); font-weight: 900; font-size: 2rem;">Passive Surface Mapping</h2>
                 <p style="margin: 1rem 0; font-weight: 800; color: var(--shore-sand); font-size: 1.1rem;">Professional Security Discovery & Interpretation</p>
                 
                 <div class="interior-card">
                     <ul class="engagement-list">
                         <li>Scripted Attack Surface Mapping</li>
                         <li>Automated Configuration Review</li>
-                        <li>Lumo-Synthesized Risk Analysis</li>
+                        <li>Raw Technical Data</li>
+                        <li>AI-Synthesized Risk Analysis</li>
                         <li>Executive Remediation Roadmap</li>
                         <li>Non-Intrusive, Passive Methodology</li>
                     </ul>
                 </div>
 
-                <a href="/cdn-cgi/l/email-protection#4e3d3b3e3e213c3a0e262f3c2c213c3d21202f3c602d2123" class="btn-anchor" style="display: inline-block; margin-top: 1.5rem;">Inquire for Engagement</a>
+                <div style="margin-top: 2.5rem; padding: 2rem; background: white; border-radius: 8px; border: 1px solid rgba(129, 199, 132, 0.2);">
+                    <h3 style="color: var(--harbor-deep); font-weight: 800; margin-bottom: 1.5rem; font-size: 1.1rem;">What's Included</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; text-align: left; font-size: 0.9rem;">
+                        <div>
+                            <p style="color: var(--harbor-deep); font-weight: 700; margin-bottom: 1rem;">✓ Includes</p>
+                            <ul style="list-style: none; padding: 0; color: var(--harbor-deep); line-height: 1.8;">
+                                <li>✓ Passive asset discovery</li>
+                                <li>✓ Vulnerability mapping</li>
+                                <li>✓ Risk prioritization</li>
+                                <li>✓ Raw technical data</li>
+                                <li>✓ Manual verification</li>
+                                <li>✓ Compliance documentation</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p style="color: var(--harbor-deep); font-weight: 700; margin-bottom: 1rem;">✗ Does Not Include</p>
+                            <ul style="list-style: none; padding: 0; color: var(--harbor-deep); line-height: 1.8;">
+                                <li>✗ Active penetration testing</li>
+                                <li>✗ Credential/auth testing</li>
+                                <li>✗ Code review or SAST</li>
+                                <li>✗ Social engineering tests</li>
+                                <li>✗ Ongoing 24/7 monitoring</li>
+                                <li>✗ Managed remediation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="mailto:support@harborsonar.com" class="btn-anchor" style="display: inline-block; margin-top: 1.5rem;">Inquire for Engagement</a>
                 
                 <div class="disclosure-box">
                     <strong>AI DISCLOSURE (TX TRAIGA 2026):</strong><br>
-                    HarborSonar utilizes Lumo (AI) to interpret raw technical data. All findings are manually verified by Michael Tatum to ensure accuracy. Lumo does not make autonomous "consequential decisions"; professional judgment is manually applied to all deliverables.
+                    HarborSonar utilizes Lumo (AI) to interpret raw technical data. All findings are manually verified by A. Michael Tatum to ensure accuracy. Lumo does not make autonomous "consequential decisions"; professional judgment is manually applied to all deliverables.
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- 
+    ========================================
+    REMAINING FIXES TO IMPLEMENT
+    ========================================
+    
+    3. CASE STUDY / ANONYMIZED EXAMPLE
+       Location: New section after "The Passive Surface Pipeline" features (before compliance banner)
+       Content: Manufacturing SMB example with challenge/approach/result
+       Status: Not yet implemented
+       
+    4. INSURANCE & TRUST SIGNALS CALLOUT
+       Location: Footer area OR new trust section (before footer)
+       Content: 
+         - Cyber Liability Insurance (Hiscox/Coalition)
+         - E&O Coverage for security consulting
+         - NDA provided upon engagement
+         - TDPSA + TRAIGA data handling compliance
+       Status: Not yet implemented
+    
+    ======================================== 
+    -->
 
     <footer>
         <div style="max-width: 1200px; margin: 0 auto; padding-bottom: 2rem;">
@@ -945,7 +1169,7 @@
             &copy; 2026 HarborSonar. All rights reserved. Professional Services provided by A. Michael Tatum.
         </div>
         <div style="margin-top: 1.5rem; opacity: 0.45; font-size: 0.7rem;">
-            <a href="https://github.com/harborsonar/hs_web" target="_blank" rel="noopener noreferrer" style="color: var(--sonar-mist); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">
+            <a href="https://github.com/harborsonar/hs_web" target="_blank" rel="noopener noreferrer" class="github-link">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
                 View Source
             </a>
@@ -953,13 +1177,15 @@
     </footer>
 
     <script>
-        // Smooth scroll with offset for fixed header
+        // Smooth scroll with dynamic offset for fixed header
+        const getHeaderOffset = () => window.innerWidth < 768 ? 70 : 80;
+        
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    const headerOffset = 80;
+                    const headerOffset = getHeaderOffset();
                     const elementPosition = target.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
                     
@@ -1019,8 +1245,6 @@
             cookieAccept.addEventListener('click', () => {
                 localStorage.setItem('cookieConsent', 'accepted');
                 cookieBanner.classList.remove('visible');
-                // Initialize analytics here if needed
-                console.log('Analytics enabled');
             });
         }
 
@@ -1028,7 +1252,6 @@
             cookieDecline.addEventListener('click', () => {
                 localStorage.setItem('cookieConsent', 'declined');
                 cookieBanner.classList.remove('visible');
-                console.log('Analytics disabled');
             });
         }
 
@@ -1064,59 +1287,8 @@
             });
         }
 
-        // Button loading state (example for form submission)
-        document.querySelectorAll('.btn-anchor').forEach(button => {
-            button.addEventListener('click', function(e) {
-                // Only add loading state if it's a form submission
-                if (this.closest('form')) {
-                    this.classList.add('loading');
-                    // Remove loading state after submission (adjust as needed)
-                    setTimeout(() => {
-                        this.classList.remove('loading');
-                    }, 2000);
-                }
-            });
-        });
-
-        // Stats counter animation
-        const animateCounter = (element, target, duration = 2000) => {
-            const start = 0;
-            const increment = target / (duration / 16);
-            let current = start;
-            
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    element.textContent = target;
-                    clearInterval(timer);
-                } else {
-                    element.textContent = Math.floor(current);
-                }
-            }, 16);
-        };
-
-        // Observe stats section for counter animation
-        if ('IntersectionObserver' in window) {
-            const statsObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        // You can customize this for numerical stats
-                        // Example: animateCounter(element, 1000, 2000);
-                        statsObserver.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.5 });
-
-            const statsSection = document.querySelector('.stats-bar');
-            if (statsSection) {
-                statsObserver.observe(statsSection);
-            }
-        }
-
         // Progressive enhancement - ensure site works without JavaScript
         document.documentElement.classList.add('js-enabled');
     </script>
-
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 </body>
 </html>
