@@ -15,7 +15,7 @@ HarborSonar provides non-intrusive security audits using scripted pipelines and 
 
 ## Tech Stack
 
-- Static HTML/CSS/JS (single-page)
+- Static HTML/CSS/JS (index page + standalone privacy page)
 - JetBrains Mono (Google Fonts)
 - Hosted on GitHub Pages
 - Cloudflare DNS/CDN
