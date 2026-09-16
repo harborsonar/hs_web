@@ -6,14 +6,14 @@
     <meta name="theme-color" content="#0B3D59">
     <meta name="description" content="HarborSonar provides automated passive surface analysis and cybersecurity compliance services for Texas infrastructure. Non-intrusive security audits with AI-enhanced insights.">
     <meta name="keywords" content="cybersecurity, Texas, TDPSA, TRAIGA, security audit, passive analysis, compliance">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://harborsonar.com/">
     <meta property="og:title" content="HarborSonar | Automated Passive Surface Analysis & Compliance">
     <meta property="og:description" content="Non-intrusive security analytics and compliance services for Texas businesses. Lumo-enhanced insights with zero production impact.">
     <meta property="og:image" content="https://harborsonar.com/og-image.png">
-    
+
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://harborsonar.com/">
@@ -22,12 +22,12 @@
     <meta property="twitter:image" content="https://harborsonar.com/og-image.png">
 
     <title>HarborSonar | Automated Passive Surface Analysis & Compliance</title>
-    
+
     <!-- Favicons -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&display=swap" rel="stylesheet">
@@ -62,15 +62,15 @@
             --shore-sand: #C9A66B;
             --earth-rock: #2A2622;
             --bg-shell: #F4F1EA;
-            
+
             /* Bold Tech Green palette */
             --forest-light: #81C784;
             --aqua-marine: #80CBC4;
             --seafoam-success: #D4EDDA;
             --deep-ocean: #1B4D3E; /* Dark professional green for footer */
-            
+
             --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            
+
             /* 8px spacing system */
             --space-xs: 8px;
             --space-sm: 16px;
@@ -86,12 +86,12 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
         }
-        
+
         /* Reduced motion for accessibility */
         @media (prefers-reduced-motion: reduce) {
             *,
@@ -111,7 +111,7 @@
             line-height: 1.6;
             text-align: center;
         }
-        
+
         /* Skip to content link for accessibility */
         .skip-to-content {
             position: absolute;
@@ -125,7 +125,7 @@
             z-index: 10000;
             transition: top 0.3s;
         }
-        
+
         .skip-to-content:focus {
             top: 0;
         }
@@ -174,20 +174,20 @@
             transition: var(--transition);
             position: relative;
         }
-        
+
         /* Hover and focus states */
         .nav-links a:hover,
         .nav-links a:focus {
             color: var(--harbor-deep);
             outline: none;
         }
-        
+
         /* Visible focus indicator */
         .nav-links a:focus-visible {
             outline: 3px solid var(--shore-sand);
             outline-offset: 4px;
         }
-        
+
         /* Underline animation */
         .nav-links a::after {
             content: '';
@@ -200,7 +200,7 @@
             transform: scaleX(0);
             transition: transform 0.3s ease;
         }
-        
+
         .nav-links a:hover::after {
             transform: scaleX(1);
         }
@@ -240,7 +240,7 @@
 
         /* Scaled Hero Sonar Container (2x: 480px) */
         .hero-sonar-container {
-            width: 480px; 
+            width: 480px;
             height: 480px;
             position: relative;
             display: flex;
@@ -265,15 +265,15 @@
             will-change: width, height, opacity;
         }
 
-        @keyframes sonarPulseLarge { 
+        @keyframes sonarPulseLarge {
             0% { width: 140px; height: 140px; opacity: 0.8; }
             100% { width: 480px; height: 480px; opacity: 0; }
         }
 
         /* Hero Text Content Integrated Overlay */
-        .hero h1 { 
-            font-size: clamp(1.8rem, 4.5vw, 4.2rem); 
-            margin: -80px 0 1.5rem; 
+        .hero h1 {
+            font-size: clamp(1.8rem, 4.5vw, 4.2rem);
+            margin: -80px 0 1.5rem;
             font-weight: 900;
             z-index: 10;
             text-shadow: 0 4px 30px rgba(0,0,0,0.5);
@@ -281,10 +281,10 @@
             text-wrap: balance;
         }
 
-        .tagline { 
-            max-width: 1000px; 
-            margin: 0 auto 3rem; 
-            opacity: 0.95; 
+        .tagline {
+            max-width: 1000px;
+            margin: 0 auto 3rem;
+            opacity: 0.95;
             font-size: 1.2rem;
             z-index: 10;
             text-shadow: 0 2px 10px rgba(0,0,0,0.3);
@@ -292,13 +292,13 @@
             text-wrap: balance;
             line-height: 1.7;
         }
-        
+
         /* Better typography hierarchy */
         h2 {
             text-wrap: balance;
             line-height: 1.2;
         }
-        
+
         /* Green underline accent for section headings */
         .section-padding h2,
         .compliance-banner h2 {
@@ -306,12 +306,12 @@
             display: inline-block;
             padding-bottom: 1rem;
         }
-        
+
         h3 {
             text-wrap: balance;
             line-height: 1.3;
         }
-        
+
         p {
             text-wrap: pretty;
         }
@@ -336,7 +336,7 @@
             border: none;
             cursor: pointer;
         }
-        
+
         .btn-anchor::before {
             content: '';
             position: absolute;
@@ -349,24 +349,24 @@
             transform: translate(-50%, -50%);
             transition: width 0.6s, height 0.6s;
         }
-        
-        .btn-anchor:hover { 
-            background: #d4b680; 
+
+        .btn-anchor:hover {
+            background: #d4b680;
             transform: translateY(-3px);
             box-shadow: 0 6px 30px rgba(201, 166, 107, 0.4);
         }
-        
+
         .btn-anchor:hover::before {
             width: 300px;
             height: 300px;
         }
-        
+
         /* Focus state for accessibility */
         .btn-anchor:focus-visible {
             outline: 3px solid white;
             outline-offset: 4px;
         }
-        
+
         /* Active/pressed state */
         .btn-anchor:active {
             transform: translateY(-1px);
@@ -374,62 +374,62 @@
         }
 
         /* --- Content Sections --- */
-        .section-padding { 
-            padding: 8rem 2rem; 
-            max-width: 1200px; 
+        .section-padding {
+            padding: 8rem 2rem;
+            max-width: 1200px;
             margin: 0 auto;
             scroll-margin-top: 80px;
         }
-        
-        .stats-bar { 
-            background: var(--seafoam-success); 
-            padding: 4rem 1rem; 
-            border-bottom: 1px solid rgba(129, 199, 132, 0.3); 
-            position: relative; 
+
+        .stats-bar {
+            background: var(--seafoam-success);
+            padding: 4rem 1rem;
+            border-bottom: 1px solid rgba(129, 199, 132, 0.3);
+            position: relative;
             z-index: 10;
             box-shadow: 0 2px 10px rgba(0,0,0,0.03);
         }
-        
-        .stats-grid { 
-            max-width: 1000px; 
+
+        .stats-grid {
+            max-width: 1000px;
             margin: 0 auto;
-            display: grid; 
+            display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 3rem;
         }
-        
-        .stat-val { 
-            display: block; 
-            font-size: 2.5rem; 
-            font-weight: 900; 
-            color: var(--harbor-deep); 
+
+        .stat-val {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--harbor-deep);
             margin-bottom: 0.5rem;
             letter-spacing: -1px;
         }
-        
-        .stat-label { 
-            display: block; 
-            font-size: 0.75rem; 
-            text-transform: uppercase; 
-            color: var(--deep-ocean); 
+
+        .stat-label {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--deep-ocean);
             font-weight: 700;
             letter-spacing: 1px;
         }
-        
+
         /* Fade in animation */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
             animation: fadeInUp 0.8s ease forwards;
         }
-        
+
         @keyframes fadeInUp {
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        
+
         .fade-in:nth-child(1) { animation-delay: 0.1s; }
         .fade-in:nth-child(2) { animation-delay: 0.2s; }
         .fade-in:nth-child(3) { animation-delay: 0.3s; }
@@ -455,10 +455,10 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         /* Alternating backgrounds: all white base, colored on even indices */
         .feature-dock:nth-child(even) { background: var(--forest-light); border-color: rgba(129, 199, 132, 0.3); }
-        
+
         .feature-dock::before {
             content: '⚓';
             position: absolute;
@@ -474,12 +474,12 @@
             box-shadow: 0 8px 30px rgba(0,0,0,0.08);
             border-color: var(--sonar-mist);
         }
-        
+
         .feature-dock:hover::before {
             opacity: 0.2;
             transform: rotate(15deg);
         }
-        
+
         /* Focus state for keyboard navigation */
         .feature-dock:focus-within {
             outline: 3px solid var(--shore-sand);
@@ -530,49 +530,49 @@
             text-align: left;
         }
 
-        .engagement-list { 
-            list-style: none; 
-            margin: 0; 
-            padding: 0; 
+        .engagement-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
         }
-        
-        .engagement-list li { 
-            margin-bottom: 1rem; 
-            padding-left: 1.8rem; 
-            position: relative; 
-            font-weight: 600; 
+
+        .engagement-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.8rem;
+            position: relative;
+            font-weight: 600;
             color: var(--harbor-deep);
             line-height: 1.6;
         }
-        
-        .engagement-list li::before { 
-            content: '⚓'; 
-            position: absolute; 
-            left: 0; 
+
+        .engagement-list li::before {
+            content: '⚓';
+            position: absolute;
+            left: 0;
             color: var(--harbor-deep);
             font-size: 1rem;
         }
-        
-        .engagement-list li:last-child { 
-            margin-bottom: 0; 
+
+        .engagement-list li:last-child {
+            margin-bottom: 0;
         }
 
         .disclosure-box {
-            margin-top: 3rem; 
-            padding: 1.5rem; 
-            background: rgba(129, 199, 132, 0.1); 
+            margin-top: 3rem;
+            padding: 1.5rem;
+            background: rgba(129, 199, 132, 0.1);
             color: var(--harbor-deep);
-            font-size: 0.75rem; 
-            text-align: left; 
+            font-size: 0.75rem;
+            text-align: left;
             border-left: 4px solid var(--forest-light);
             border-radius: 4px;
         }
 
-        footer { 
-            background: var(--deep-ocean); 
-            color: var(--sonar-mist); 
-            padding: 4rem 2rem; 
-            border-top: 4px solid var(--shore-sand); 
+        footer {
+            background: var(--deep-ocean);
+            color: var(--sonar-mist);
+            padding: 4rem 2rem;
+            border-top: 4px solid var(--shore-sand);
         }
 
         .github-link {
@@ -741,12 +741,12 @@
 
         @media (max-width: 768px) {
             .hero-sonar-container { width: 300px; height: 300px; }
-            
-            @keyframes sonarPulseLarge { 
+
+            @keyframes sonarPulseLarge {
                 0% { width: 100px; height: 100px; opacity: 0.8; }
                 100% { width: 300px; height: 300px; opacity: 0; }
             }
-            
+
             .hero-brand-label { font-size: 4rem; top: 120px; }
             .hero h1 { margin-top: -40px; font-size: 1.4rem; }
             .hero { clip-path: none; padding: 160px 1.5rem 120px; }
@@ -755,69 +755,69 @@
             .features-grid { grid-template-columns: 1fr; }
             .engagement-card { padding: 2.5rem 1.5rem; }
             .stats-grid { gap: 1.5rem; }
-            
+
             h2 { font-size: 1.8rem !important; }
             h3 { font-size: 1rem !important; }
             p { font-size: 0.95rem !important; }
-            
+
             /* Table mobile fixes */
             table { font-size: 0.8rem; }
             th, td { padding: 0.8rem !important; }
-            
+
             /* Section padding mobile */
             .section-padding {
                 padding: 3rem 1.5rem !important;
                 scroll-margin-top: 70px;
             }
-            
+
             /* Underline spacing mobile */
             div[style*="margin-bottom: 3rem"] {
                 margin-bottom: 2rem !important;
             }
-            
+
             div[style*="bottom: -1rem"] {
                 bottom: -0.8rem !important;
             }
-            
+
             header {
                 scroll-margin-top: 70px;
             }
-            
+
             .compliance-banner {
                 scroll-margin-top: 70px;
                 padding: 3rem 1.5rem !important;
             }
-            
+
             /* Responsive underline positioning */
             div[style*="position: relative"][style*="margin-bottom"] {
                 margin-bottom: 2rem !important;
             }
-            
+
             /* FAQ card widths */
             div[style*="max-width: 800px"] {
                 max-width: 100% !important;
                 padding: 0 1rem !important;
             }
-            
+
             /* Features container */
             div[style*="max-width: 1200px"] {
                 max-width: 100% !important;
                 padding: 0 1rem !important;
             }
-            
+
             /* Full Transparency callouts */
             div[style*="display: flex"][style*="gap: 3rem"] {
                 flex-direction: column !important;
                 gap: 2rem !important;
             }
-            
+
             /* Navigation pre-launch banner */
             div[style*="background: linear-gradient"][style*="padding: 0.8rem"] {
                 padding: 0.6rem 1rem !important;
                 font-size: 0.75rem !important;
             }
         }
-        
+
         /* Print styles */
         @media print {
             .skip-to-content,
@@ -830,19 +830,19 @@
             .cookie-banner {
                 display: none !important;
             }
-            
+
             body {
                 background: white;
                 color: var(--harbor-deep);
             }
-            
+
             .hero {
                 background: white;
                 color: var(--harbor-deep);
                 clip-path: none;
                 padding: 2rem;
             }
-            
+
             .btn-anchor {
                 border: 2px solid var(--harbor-deep);
                 color: var(--harbor-deep);
@@ -909,15 +909,15 @@
     <main id="main-content">
         <section class="hero" id="hero" aria-label="Hero section">
             <div class="hero-brand-label" aria-hidden="true">HarborSonar</div>
-            
+
             <div class="hero-sonar-container" role="img" aria-label="Animated sonar detection visualization">
                 <div class="sonar-ring-static" style="width: 480px; height: 480px;"></div>
                 <div class="sonar-ring-static" style="width: 360px; height: 360px;"></div>
                 <div class="sonar-ring-static" style="width: 240px; height: 240px;"></div>
-                
+
                 <div class="sonar-ping"></div>
                 <div class="sonar-ping" style="animation-delay: 1.5s;"></div>
-                
+
                 <div style="z-index: 5;">
                     <svg width="140" height="140" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <circle cx="50" cy="24" r="6" stroke="var(--shore-sand)" stroke-width="4" fill="none"/>
@@ -950,7 +950,7 @@
                 <div style="position: absolute; bottom: -1rem; left: 50%; transform: translateX(-50%); width: 60px; height: 4px; background: linear-gradient(90deg, var(--forest-light) 0%, var(--aqua-marine) 100%); border-radius: 2px;"></div>
             </div>
             <p style="font-size: 1rem; color: var(--harbor-deep);">A production-ready approach to security analytics that prioritizes repeatability and objective data.</p>
-            
+
             <div class="features-grid">
                 <div class="feature-dock fade-in">
                     <h3>Passive Asset Discovery</h3>
@@ -1007,7 +1007,7 @@
                 <h2 style="font-size: 2.4rem; color: var(--harbor-deep); margin-bottom: 0; font-weight: 900; text-align: center;">Frequently Asked Questions</h2>
                 <div style="position: absolute; bottom: -1rem; left: 50%; transform: translateX(-50%); width: 60px; height: 4px; background: linear-gradient(90deg, var(--forest-light) 0%, var(--aqua-marine) 100%); border-radius: 2px;"></div>
             </div>
-            
+
             <div style="max-width: 800px; margin: 0 auto;">
                 <div style="margin-bottom: 2.5rem; padding: 2rem; background: white; border-radius: 8px; border-left: 4px solid var(--shore-sand);">
                     <h3 style="color: var(--harbor-deep); font-size: 1rem; margin-bottom: 0.8rem;">How do you perform the analysis?</h3>
@@ -1078,7 +1078,7 @@
                 <h2 style="font-size: 2.4rem; color: var(--harbor-deep); margin-bottom: 0; font-weight: 900; text-align: center;">Service Tiers</h2>
                 <div style="position: absolute; bottom: -1rem; left: 50%; transform: translateX(-50%); width: 60px; height: 4px; background: linear-gradient(90deg, var(--forest-light) 0%, var(--aqua-marine) 100%); border-radius: 2px;"></div>
             </div>
-            
+
             <div style="max-width: 1200px; margin: 0 auto; overflow-x: auto; -webkit-overflow-scrolling: touch;">
                 <table style="width: 100%; min-width: 760px; border-collapse: collapse; font-size: 0.95rem;">
                     <thead>
@@ -1146,7 +1146,7 @@
             <div class="engagement-card">
                 <h2 style="color: var(--harbor-deep); font-weight: 900; font-size: 2.4rem;">Passive Surface Mapping</h2>
                 <p style="margin: 1rem 0; font-weight: 800; color: var(--shore-sand); font-size: 1rem;">Professional Security Discovery & Interpretation</p>
-                
+
                 <div class="interior-card">
                     <ul class="engagement-list">
                         <li>Scripted Attack Surface Mapping</li>
@@ -1187,7 +1187,7 @@
                 </div>
 
                 <a href="mailto:support@harborsonar.com" class="btn-anchor" style="display: inline-block; margin-top: 1.5rem;">Inquire for Engagement</a>
-                
+
                 <div class="disclosure-box">
                     <strong>VOLUNTARY AI TRANSPARENCY DISCLOSURE:</strong><br>
                     HarborSonar utilizes Lumo (AI) to interpret raw technical data. All findings are manually verified by A. Michael Tatum to ensure accuracy. Lumo does not make autonomous "consequential decisions"; professional judgment is manually applied to all deliverables.
@@ -1196,26 +1196,26 @@
         </section>
     </main>
 
-    <!-- 
+    <!--
     ========================================
     REMAINING FIXES TO IMPLEMENT
     ========================================
-    
+
     3. CASE STUDY / ANONYMIZED EXAMPLE
        Location: New section after "The Passive Surface Pipeline" features (before compliance banner)
        Content: Manufacturing SMB example with challenge/approach/result
        Status: Not yet implemented
-       
+
     4. INSURANCE & TRUST SIGNALS CALLOUT
        Location: Footer area OR new trust section (before footer)
-       Content: 
+       Content:
          - Cyber Liability Insurance (Hiscox/Coalition)
          - E&O Coverage for security consulting
          - NDA provided upon engagement
          - TDPSA + TRAIGA data handling compliance
        Status: Not yet implemented
-    
-    ======================================== 
+
+    ========================================
     -->
 
     <footer>
@@ -1238,7 +1238,7 @@
     <script>
         // Smooth scroll with dynamic offset for fixed header
         const getHeaderOffset = () => window.innerWidth < 768 ? 70 : 80;
-        
+
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1247,7 +1247,7 @@
                     const headerOffset = getHeaderOffset();
                     const elementPosition = target.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                    
+
                     window.scrollTo({
                         top: offsetPosition,
                         behavior: 'smooth'
@@ -1292,7 +1292,7 @@
 
         // Check if user has already made a choice
         const cookieConsent = localStorage.getItem('cookieConsent');
-        
+
         if (!cookieConsent) {
             // Show banner after 2 seconds
             setTimeout(() => {

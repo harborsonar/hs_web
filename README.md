@@ -35,4 +35,3 @@ A. Michael Tatum, Cloud Linux Engineer — Georgetown, Texas
 ## License
 
 © 2026 HarborSonar. All rights reserved.
-
