@@ -764,6 +764,13 @@
             table { font-size: 0.8rem; }
             th, td { padding: 0.8rem !important; }
 
+            /* Delta Posture Verification add-on: prices become their own centered row on mobile */
+            .delta-addon-prices {
+                flex: 1 1 100% !important;
+                border-left: none !important;
+                padding-left: 0 !important;
+            }
+
             /* Section padding mobile */
             .section-padding {
                 padding: 3rem 1.5rem !important;
@@ -1145,7 +1152,7 @@
                     <div style="font-size: 1.3rem; font-weight: 900; color: var(--harbor-deep);">Delta Posture Verification</div>
                     <div style="font-size: 0.95rem; color: var(--harbor-deep); margin-top: 0.4rem; line-height: 1.65;">Post-remediation re-scan of the same surface, with before/after posture comparison and a SHA-256-stamped verification manifest. Available to Tier 2 &amp; Tier 3 clients after applying the remediation playbook.</div>
                 </div>
-                <div style="flex: 0 0 auto; text-align: center; padding-left: 2.5rem; border-left: 1px solid rgba(130,167,166,0.35);">
+                <div class="delta-addon-prices" style="flex: 0 0 auto; text-align: center; padding-left: 2.5rem; border-left: 1px solid rgba(130,167,166,0.35);">
                     <div style="font-size: 1.7rem; font-weight: 900; color: var(--harbor-deep); line-height: 1.1;">$500</div>
                     <div style="font-size: 0.8rem; color: var(--harbor-deep); opacity: 0.85; margin-top: 0.2rem;">active subscribers</div>
                     <div style="font-size: 1.05rem; font-weight: 800; color: var(--harbor-deep); margin-top: 0.6rem;">$950</div>
