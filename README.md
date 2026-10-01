@@ -1,6 +1,6 @@
 # HarborSonar
 
-Automated passive surface analysis and cybersecurity compliance services for Texas infrastructure.
+Automated non-intrusive surface analysis and cybersecurity compliance services for Texas infrastructure.
 
 ## Overview
 
@@ -8,7 +8,7 @@ HarborSonar provides non-intrusive security audits using scripted pipelines and 
 
 ## Services
 
-- **Passive Asset Discovery** — Automated mapping of subdomains, open ports, and DNS configurations using non-intrusive scripts
+- **Non-Intrusive Asset Discovery** — Automated mapping of subdomains, open ports, and DNS configurations using non-intrusive methods — rate-limited scripts
 - **Lumo-Enhanced Interpretation** — AI synthesis of raw technical data into prioritized risk categories and executive themes
 - **Strategic Risk Mapping** — Service-to-CVE correlation for critical vulnerability identification
 - **Texas Compliance** — Built for 2026 TDPSA and TRAIGA standards, maintaining Tier 1 Safe Harbor under SB 2610
